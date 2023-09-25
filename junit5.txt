@@ -1,0 +1,40 @@
+@Test:-
+1. Mark a method as test
+2.Junit knows this method should run(instead of main).
+
+JUNIT AS RUNNER
+
+ASSERT METHODS:-
+1.AssertEquals :- 
+a. assertEquals(expeccted,actual,message(String):- this check two values.
+b.assertArrayEquals(expecctedArray,actualArray):-varifies each elemant in an array in the same position.
+b.assertIterableEquals(expecctedArray,actualArray):-varifies each elemant in an array in the corresponding position.
+
+TEST DRIVEN DEVELOPMENT:-
+A.write test first and then code for it.
+
+CHECK WHEN A METHOD THROW EXCEPTION OR NOT.
+1. Use Assert Throw method in assertion.
+
+TEST LIFE CYCLE:-
+1.JUNIT5 create new test instant whenever a new tests runs.
+
+Hook Annotation
+1. it provides a method/mechanism to run this code before every method.
+
+LIFECYCLE HOOKS:-
+@BeforeAll:- method should be static
+@BeforeEach
+@AfterAll
+@AfterEach
+
+ANNOTATIONS:-
+@TestInstance:-
+@TestInstance(TestInstance.Lifecycle.PER_METHOD):-this annotation create instance of class every method.
+@DisplayName= it will give test the name;
+@Disable:-test which uses this will be avoided by compiler.
+
+Assumption:-
+@assume:-
+@assertAll :- contain n number of assert statements.
+

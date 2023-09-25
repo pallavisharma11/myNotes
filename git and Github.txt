@@ -1,0 +1,13 @@
+--git --version :- to check the version of git
+git help --config/git config --help
+mkdir directryName :- command to create directory.
+cd dir
+git init:-command to enter in the directory.
+git status:-command to check the status of git directory.
+git add fileName.txt :-command to add a file in directory.
+git commit -m "commiting a text file"
+git config --global user.username pallaviSharma11 -:connect to github.
+create repo on github.
+git remote add origin repo_url
+git push rigin master
+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

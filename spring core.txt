@@ -1,0 +1,183 @@
+spring framework:-
+1.it provide structure
+2.It actually a container which provides beans.
+Spring core :-
+Dependency Injections:- 
+
+Spring Containers:-
+1.it instantaite the objects.
+2.it holds the life cycle of object.
+3.it destrction also //we can have object outside of containers
+{ if a object is in spring container and some other object which is not present in container 
+try to access the object A then we dont have to write the new key we just ask the conatiner 
+and this pattern is knows as "Factory Pattern".}
+Bean == object.
+**Bean Factory Interface.
+1.BeanFactory interface is the simplest container providing an advanced configuration
+ mechanism to instantiate, configure and manage the life cycle of beans
+XMLBeanFactory = it will configure a ban factory as xml
+
+ApplicationContext :- it provide all the functionality as beanFunction
+
+COONSTRUCTOR INJECTION:-
+value =="String" //spring convert string into respective data type.
+
+**ALIASES:- it is way to give different names to the same bean. it will rename the bean.
+
+
+BEAT Autoiring:- when we apply autowiring to bean then we dont need to write the property for it 
+we can write : <bean autowire ="byName/byType/constructor">
+
+Initialization of bean happenes at ApplicationContext
+configure bean at getBean.
+
+BEAN SCOPE:-
+1.singleton:-only once per spring contaier.
+2.Prototype.:- New bean created with every request/reference.
+3.Request
+4.Session
+5.Global Session.
+
+COLLECTION MERGE:-
+<list merge="true">
+
+LIFECYCLE CALLBACK:-
+registerShutdownHook() = when we use it then the application context knows that when application ends its time to shut down and close the beans.
+InitiazingBean interface:- we want to know about our bean.after Bean initiaze.
+DisposableBean interface = used when a bean destroy.
+if we don't need to write the InitiazingBean and Disposable interface then we can use myInit method for initializing.
+BeanPostProcessor:-single method will run for every run.
+BeanFactorPostProcessor:-when bean factory initiazed.
+property bean folder.
+** We can use interface also which some class implement that.
+------------------------------------------------------------------------------------------------
+
+ANNOTATION:-
+
+1.Required:- when variable should not null.
+==>BeanPostProcessor:- it is the one which throws exception when required bean in not present in r declare.It is actually checking for aanotation
+==>when dependency are met.
+
+2.Autowired:- 
+if there are more than one bean of same than it will give error.
+if spring find multiple bean then it will find bean with same as data menber.
+And if we dont want to give the same to out bean then we use qualifer annotation.
+3.Qualifier :- it is related to some perticuler class.
+
+3.JSR-250:- it is standard that define all the annotation.
+3.1 Resource:- to inject dependencies injectection by name. it is similar to autowire.
+3.2 POStConstruct:- allow initialize method before bean created
+3.3 PreConstruct:- all destruction method to run before destrooy method.
+
+Component and Sterotype Annotation:-
+
+Component:- it declare a class as bean.it will define a class as bean. 
+you cannot have different instances for bean.
+if you want to create diiferent bean ==> disadvantages.
+ 
+Sterotype Annotation :- 
+Service:- gives addition information to bean that it is a srvice bean.
+Controller:- 
+
+-----------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Annotation:- 
+required
+2.qualifer
+3.Autowired
+
+JSR-250 Annotations:-
+1.Resource:-
+2.
+
+Even Handling :-
+1.EventPublisher
+2.EventListerner
+3.Event:- class which explain the event.
+
+
+Aspect Orieted Programming:-
+it is a model of program.
+
+Functional Programming:-
+OOPS:-
+problem
+1.To many relationship to the crossCuttin objects
+2.code is still require
+3.Ccannot update all at once
+
+Aspects:-
+it actually a special class privilages has transaction ,logging.
+Aspect Configuration :- this tells where we should use aspects.
+
+Spring AOP:-
+it enables AOP
+WHy AOP?
+Maintaince is easy as we only need to change in xml file.
+
+Advice :- represnt action taken by an aspect at a perticular join point
+JoinPoint:- A point in a program such as method execution,exception handling etc
+PointCut :- it is an expressio language of AOP that matches join points
+Different type of Advice:-
+1.Before Advice:-execute before join point
+2.After Advice:- after joinpoint
+3.After Returning Advice:- after join point complete
+4. Around Advice:- advice that surrounds a join point like method invocation.
+
+
+AOP Annotations:-
+1.Project Dependencies:-
+
+Aspect:- 
+Before:- to run a metho before some method.
+
+WildCard:-
+*
+(..) for arguments in method.
+
+PointCut :- where you want your method.
+execuution
+within:- it makes us apply advice in any/within class.
+==>it is more readable.
+3.args:-all method that takes a particular object/datatype. 
+==>arguments.
+4.target:-
+
+
+primary and secondary :- 
+
+
+
+
+
+

@@ -1,0 +1,53 @@
+Microservice - advantage/disadvantages/limitations.
+is it a end point for every thing.
+Uber Architecture.
+
+https://medium.com/edureka/microservice-architecture-5e7f056b90f1
+
+Microservice Architecture — Explore UBER’s Microservice Architecture
+
+This article on Microservice Architecture will help you understand the working of Microservices with the help of UBER case-study.
+
+Q1:- what are microservices? what are the advantages? what are limitations?
+
+
+Monolithic architecture :-
+** multiple component are combined in single large app.
+**Single Code Base.
+**Deployed in single bundle.
+**Change in one service then wholw app is redeployed.
+**Building problem :- developer has to communicate.
+**Cumbersome over time.
+**Problem in scale.
+
+
+Microservices:- 
+**Large apps are  divide into small parts/project.
+**Diferent codebase.
+**Each module managed independently.
+**Different tech stack.
+
+
+Limitation:-
+**Handling microservices is complex.
+
+AWS
+GOOGLE CLOUD 
+AZURE.
+
+
+Fault Tolerance:- 
+
+
+
+MICROSERVICE CONFIGURATIONS:- 
+**
+
+
+
+
+
+
+
+SPRING CLOUD CONFIG SERVER:- 
+** 

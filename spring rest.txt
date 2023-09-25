@@ -1,0 +1,48 @@
+web services=
+*** developing a solftware(service provider) in such a way that any other application(client application) can make
+	 a call to this application .
+*** Its not neccessary that both the application write in same language and on the same machine.
+
+WEB SERVICES is of two type
+1.SOAP WEB SERVICE:-when any application build using alll the soap protocol then that will be soap web service.
+	*** It tells that both the application should communicate with each other in the same language like xml with some standards
+		this is called SOAP Format.
+	*** SOAP Mostly use http protocol but it can also use other protocols as well.
+
+	****When calling any method of service provider client application should know some basic information about the web service application.
+	**** like ip address port number,address of service provider.
+	**** exact signation of all the methods  of service provider.
+
+	web Service Description Language.==> wsdl
+
+2.REST WEB service:- when any application build by following all the rest guidelines than that application is called rest Web services.
+	*** Rest stands for Representation State Transfer.
+	*** it is actually a set of guidelines.
+
+
+**** Anything which is at the server side data,functionality etc its called Resource.
+****When client wants to access the resource he/she request for a resource and then the server returns the response which is actually a representation of resource(pdf,html,json,xml).
+****when server returns the response server also return some addition information about the resource(size,format,basic characterstics).
+****According to REST Guidelines :- when receiving a response client should able to modify the resource or even can delete it.
+****If any firewall server /coaching server is present at server/client side than when requesting a resourse the firewall server check the request for any maicious thing.
+****if client ask for resource which is already been asked by client than it should be present in coaching server and coaching server will sent the response.
+****All the request treated as a new response and it return every related think.
+****every Represenation of resource should contain all the links or url which may require by clients 
+****REST GUIDELINES ALSO KNOW AS HATEOS.
+
+POSTMAN :- A Rest API testing tool.
+
+status code:-
+1.200 OK
+2.404 NOT Found
+3.500 Internal Server Error
+
+HEADER:-
+
+POST REST API:- only for those when user has to create new resource at the server.
+
+	
+
+
+Swagger:- 
+ 1.Documenting API.

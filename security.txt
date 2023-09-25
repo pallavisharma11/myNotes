@@ -1,0 +1,38 @@
+Authentication :- who are you with proves?
+	Knowledhe based authentication
+	Possession based authentication
+	Multifactor authentication
+Authorization:- can this user do this?
+Principal:- currently logged in user
+Granted Authority.
+Role:-Group of Authority
+
+Filters:- 
+This is the default behaviours.
+*add mandatory authentication for URLs
+*Add login form
+*handler login error
+*Create a user and set a default password
+
+Authentication in spring Security.
+
+AuthenticationManager:- use AuthenticationManagerBuilder
+*authenticate():-
+
+
+
+MONDAY:- Develope a service for university two role one is admin/student and other is Teacher.
+Requirement that is related to result either register or check result.
+manger:-add result and delete result
+Cache:- 
+
+
+[11:40 AM] Zarapkar, Samruddhi Keshav
+
+Create a Restful webservice to declare the result of University
+
+There will be 2 users who can access the aplication:
+
+1. Management: Includes professors and other university management. They should be able to add, edit and delete the results for candidtes. Also, they should be able to view all results and serach as well.
+
+2. Candidate: Candidte should be able to view his/her result. They should not be able to view any other candidate's result apart from themselves. Nor should they be able to add, edit or delete. 

@@ -1,0 +1,127 @@
+installation 
+atlas
+mongo shell/GUI :- must be connected to database.
+start working with mongodb.
+
+mongo
+mongod
+quit()
+mongo --help
+help keys
+help misc
+show dbs
+use local
+show collections
+db.collectionName.find().pretty().
+db. //tab * tab -: it will show you all the possible collections
+db.server // tab *2;
+use test //to create dataBase untill we dont create some data in a database it will not created
+db.createCollection("Employee") //It will create collection  Employee
+db.dropDatabase() // it will drop/delete the database
+db.createCollection("CollectionName") // it will create collection
+db.collectionName.insert({"name":"Pallavi"}) // it will create collection and also add the name pallavi in it;
+
+
+---------------------------------------------------------------------------------------
+CAPPED COLLECTION
+db.createCollection('logs',{capped:true,size:2048,max:2}) // it will create a capped collection
+db.collection.help() //to get help from collection
+db.collectionName.drop() // it will drop the collecction
+obectId == primary key
+
+------------------------------------------------------------------------------------------
+CRUD:-
+CREATE:-
+db.Student.insert([{firstNmae:"Pallavi},{fisrtNmae:"Hemlaat"}]) //create array of collections
+db.Student.insert({_id:2,firstName:"Plalvu"}) // it will add with the id 
+order:true //which means it will add document one by one if one document has a error than it will not insert other document in tha database.
+order:false//it will ignore the document which has error only.
+updtae:-
+==>db.collectionname.update({'course':'java'},{$set:{'course':'android'}}) 
+delete:-
+==>db.collectionName.remove( { type : "programming language" }, 1 )   
+
+------------------------------------------------------------------------------------------------------
+Relation
+it is way when one document interact with other documents
+
+
+---------------------------------------------------------------------------------------------------
+getInstexes():
+db.collectionname.getIndexes()
+db.collectionname.createIndex({Index:1},{unique:true})
+db.collection.find({age:{$gt:25}}).explain()
+db.collectionName.dropIndex({index:1})
+
+-----------------------------------------------------------------------------------------------
+AGGREFATION
+1. aggregate() // it is equivalent to find()
+=>db.Col.aggregate([])
+2.Stage 
+=>{$stageOprator>:{}}
+2.1.match stage :- it filters the documents.
+=> {$match:{city:"New York"}}
+=> {$match:{tag:{$size:3}}}
+==> db.student1.aggregate([{$match:{name:"Pallavi"}}])
+2.2. group stage:- it groups the documents based on the field.
+==>  db.student1.aggregate([{$group:{_id:"$city"}}])
+2.2.1 group by multiple field:-
+==>  db.student1.aggregate([{$group:{_id:{city:"$city",age:"$age"}}}])
+2.3. match and group together:
+==>   db.student1.aggregate([
+... {$match:{name:"Priya"}},
+... {$group:{_id:{city:"$city"}}}
+... ]) // we can swap it also..
+2.4 Count Stage:- count number of the input documents.
+==>db.col.aggregate([]).toArray().length
+==> db.col.aggregate([]).itcount()
+==> db.col.aggregate([$count:"total"}])
+==> db.col.find({}).count()
+2.5 group and count:-
+==> db.student1.aggregate([
+... {$group:{_id:{city:"$city",age:"$age"}}},
+... {$count:"cityAndAge"}
+... ])
+2.6:-sort: sort the documents //1 = ascending order and -1 for descending order.
+==>db.student1.aggregate([
+... {$sort:{name:1}}])
+2.7 Project:- it used to select some specific field from collections.
+==>db.student1.aggregate([
+... {$project:{name:1}}])
+==> db.student1.aggregate([
+... {$project:{name:1,user:{
+		category:"good"
+	}}]) //it will add new field;
+2.8 Limit:-output first n document from the input.
+==> db.student1.aggregate([
+... {$limit:2}])
+2.9:- unwind:- split each document with array one document per array element
+==>unwind is used with arrays
+2.10:- out:- write resulting in new documents.it will create new collection automatically.
+==>
+3.Expressions:- it is the name of the field
+=>"$<fieldName>"
+
+4.ACCUMULATORS
+
+4.1.Sum:- sum numeric value in each group. It only uses with group
+==>{total:{$sum:"$quantity}}
+==>{count:{$sum:1}}
+==>db.student1.aggregate([
+... {$group:{
+... _id:"$age",
+... count:{$sum:1}
+... }}
+... ])
+
+4.2:avg=: calculates average value of the certain values in the documents.
+
+
+5.Unary operators:- used in project stage
+5.1:-type-:
+==>  db.student1.aggregate([ { $project: { name: 1,
+... nameType:{$type:"name"}}}])
+
+6.allowDiskUse:- limit is 100mb.
+==>server will give error if this limit exit.
+===>{allowDiskUse:true}
